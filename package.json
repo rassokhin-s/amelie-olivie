@@ -1,0 +1,29 @@
+{
+  "name": "amelie-olivie",
+  "version": "1.0.0",
+  "description": "Photo blog's static pages which fetch posts from Thumblr",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-bless": "^3.0.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rassokhin-s/amelie-olivie.git"
+  },
+  "author": "Stanislav Rassokhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rassokhin-s/amelie-olivie/issues"
+  },
+  "homepage": "https://github.com/rassokhin-s/amelie-olivie#readme"
+}
