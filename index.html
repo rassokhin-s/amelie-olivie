@@ -8,4 +8,15 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <link rel="stylesheet" property="stylesheet" href="public/css/all.css">
   </head>
+  <body>
+    <div id="photos" class="photos"></div>
+    <script id="postTemplate" type="text/x-jsrender">
+      <div class="image-post">
+        <div class="image-post__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="image-post__img"></div>
+      </div>
+    </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="public/js/vendor/jsrender.min.js"></script>
+    <script type="text/javascript" src="public/js/home.js"></script>
+  </body>
 </html>

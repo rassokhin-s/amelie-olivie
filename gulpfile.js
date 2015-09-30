@@ -8,7 +8,7 @@ var gulp      = require('gulp'),
     clean     = require('gulp-clean');
 
 var paths = {
-    lessAllFiles: './public/src/less/**/*.less',
+    lessAllFiles: './src/less/**/*.less',
     lessGeneralFiles: './src/less/*.less',
     cssAllFiles: './public/css/*.css',
     cssDestFiles: './public/css',

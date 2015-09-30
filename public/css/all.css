@@ -330,14 +330,49 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.clearfix {
+.clearfix,
+.photos {
   *zoom: 1;
 }
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.photos:before,
+.photos:after {
   content: "";
   display: table;
 }
-.clearfix:after {
+.clearfix:after,
+.photos:after {
   clear: both;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.photos .image-post {
+  display: block;
+  float: left;
+  width: 25%;
+  padding: 0 1.5%;
+}
+.photos .image-post__img-wrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 15px auto;
+}
+.photos .image-post__img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
