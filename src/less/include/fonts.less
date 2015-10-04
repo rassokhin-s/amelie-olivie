@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'zapfino';
+    src: url('../../../public/fonts/zapfino/LinotypeZapfino-One.eot?') format('eot'),
+    url('../../../public/fonts/zapfino/LinotypeZapfino-One.woff') format('woff'),
+    url('../../../public/fonts/zapfino/LinotypeZapfino-One.ttf')  format('truetype'),
+    url('../../../public/fonts/zapfino/LinotypeZapfino-One.svg#LinotypeZapfino-One') format('svg');
+}
+
+.ptserif(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+    font: ~"@{pxValue}px" 'PT Serif', serif;
+    font: ~"@{remValue}rem" 'PT Serif', serif;
+}
+
+.zapfino(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+    font: ~"@{pxValue}px" 'zapfino';
+    font: ~"@{remValue}rem" 'zapfino';
+}

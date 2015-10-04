@@ -9,15 +9,18 @@
     <link rel="stylesheet" property="stylesheet" href="public/css/all.css">
   </head>
   <body class="blog">
-    <section class="pictures-container">
-      <div class="pictures-container__top">
-        <div class="pictures-container__top-left">
-          <div id="weekpicContainer" class="weekpic-container"></div>
+    <div class="content-wrapper">
+      <section class="pictures-container">
+        <div class="pictures-container__top">
+          <div class="pictures-container__top-left">
+            <p class="pictures-container__weekpic-title">The Painting of the Week</p>
+            <div id="weekpicContainer" class="weekpic-container"></div>
+          </div>
+          <div class="pictures-container__top-right"></div>
         </div>
-        <div class="pictures-container__top-right"></div>
-      </div>
-      <div id="photosContainer" class="pictures-container__thumbs"></div>
-    </section>
+        <div id="photosContainer" class="pictures-container__thumbs"></div>
+      </section>
+    </div>
     <script id="picOfTheWeekTmpl" type="text/x-jsrender">
       <div class="weekpic">
         <div class="weekpic__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="weekpic__img"></div>
@@ -26,6 +29,7 @@
     <script id="picTmpl" type="text/x-jsrender">
       <div class="image-post"><a href="javascript:void(0);" class="image-post__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="image-post__img"></a></div>
     </script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="public/js/vendor/jsrender.min.js"></script>
     <script type="text/javascript" src="public/js/home.js"></script>

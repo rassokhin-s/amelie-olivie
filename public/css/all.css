@@ -349,10 +349,51 @@ table {
 .pictures-container__thumbs:after {
   clear: both;
 }
+@font-face {
+  font-family: 'zapfino';
+  src: url('../../../public/fonts/zapfino/LinotypeZapfino-One.eot?') format('eot'), url('../../../public/fonts/zapfino/LinotypeZapfino-One.woff') format('woff'), url('../../../public/fonts/zapfino/LinotypeZapfino-One.ttf') format('truetype'), url('../../../public/fonts/zapfino/LinotypeZapfino-One.svg#LinotypeZapfino-One') format('svg');
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape while allowing user zoom */
+}
+body {
+  font-family: 'PT Serif', serif;
+  color: #000000;
+  font-size: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  -ms-interpolation-mode: bicubic;
+}
+.content-wrapper {
+  width: 90%;
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 42.5%;
+  }
 }
 .pictures-container__top-left,
 .pictures-container__top-right {
@@ -363,6 +404,12 @@ table {
 }
 .pictures-container__top-right {
   width: 35%;
+}
+.pictures-container__weekpic-title {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font: 18px 'PT Serif', serif;
+  font: 1.8rem 'PT Serif', serif;
 }
 .image-post {
   display: block;
@@ -411,6 +458,7 @@ table {
   padding-bottom: 60%;
   position: relative;
   overflow: hidden;
+  border: 1px solid dimgray;
 }
 .weekpic__img {
   display: block;
