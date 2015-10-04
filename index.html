@@ -8,12 +8,23 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <link rel="stylesheet" property="stylesheet" href="public/css/all.css">
   </head>
-  <body>
-    <div id="photos" class="photos"></div>
-    <script id="postTemplate" type="text/x-jsrender">
-      <div class="image-post">
-        <div class="image-post__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="image-post__img"></div>
+  <body class="blog">
+    <section class="pictures-container">
+      <div class="pictures-container__top">
+        <div class="pictures-container__top-left">
+          <div id="daypicContainer" class="daypic-container"></div>
+        </div>
+        <div class="pictures-container__top-right"></div>
       </div>
+      <div id="photosContainer" class="pictures-container__thumbs"></div>
+    </section>
+    <script id="picOfTheDayTmpl" type="text/x-jsrender">
+      <div class="daypic">
+        <div class="daypic__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="daypic__img"></div>
+      </div>
+    </script>
+    <script id="picTmpl" type="text/x-jsrender">
+      <div class="image-post"><a href="javascript:void(0);" class="image-post__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="image-post__img"></a></div>
     </script>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="public/js/vendor/jsrender.min.js"></script>

@@ -5,8 +5,10 @@ function thumblrCallback() {}
 $(function() {
 
     var photos = {
-        tmpl: $.templates("#postTemplate"),
-        $photosContainer: $('#photos'),
+        dayPicTmlp: $.templates('#picOfTheDayTmpl'),
+        simpleTmpl: $.templates("#picTmpl"),
+        $daypicContainer: $('#daypicContainer'),
+        $photosContainer: $('#photosContainer'),
         init: function() {
             // Request to Thumblr server need to be send in jsonp format, so we need to provide a callback in window object
             // then we set this callback to local func to work with local env
@@ -32,24 +34,41 @@ $(function() {
             if (data.response && data.response.total_posts) {
                 for (var i = 0; i < data.response.posts.length; i++) {
                     var post = data.response.posts[i];
-                    this.createImage(post);
+                    var type = i == 0? 'daypic' : 'simple';
+                    this.createImage(post, type);
                 }
             }
         },
-        createImage: function(post) {
+        createImage: function(post, type) {
             for (var i = 0; i < post.photos.length; i++) {
                 var photos = post.photos[i];
-                var $html = this.renderImage(photos, post.caption);
-                this.$photosContainer.append($html);
+                var $html = this.renderImage(type, photos, post.caption);
+                if (type == 'daypic') {
+                    this.$daypicContainer.html($html);
+                }
+                else if (type == 'simple') {
+                    this.$photosContainer.append($html);
+                }
             }
         },
-        renderImage: function(photos, caption) {
-            return this.tmpl.render({
-                // get alt_size of 400px width
-                imgSrc: photos.alt_sizes[2].url,
-                // escape html in caption
-                imgName: $(caption).text()
-            });
+        renderImage: function(type, photos, caption) {
+            if (type == 'daypic') {
+                return this.dayPicTmlp.render({
+                    // get alt_size of 400px width
+                    imgSrc: photos.original_size.url,
+                    // escape html in caption
+                    imgName: $(caption).text()
+                });
+            }
+            else if (type == 'simple') {
+                return this.simpleTmpl.render({
+                    // get alt_size of 400px width
+                    imgSrc: photos.alt_sizes[2].url,
+                    // escape html in caption
+                    imgName: $(caption).text()
+                });
+            }
+            return '';
         }
     };
 

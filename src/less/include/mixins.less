@@ -46,6 +46,12 @@
     transition: @value;
 }
 
+.transform(@rest...) {
+    transform:         @rest;
+    -ms-transform:     @rest;
+    -webkit-transform: @rest;
+}
+
 .translate (@x, @y:0) {
     -webkit-transform:       translate(@x, @y);
     -moz-transform: 	 translate(@x, @y);
@@ -58,4 +64,11 @@
     -moz-transform: 	 translate3d(@x, @y, @z);
     -ms-transform: 		 translate3d(@x, @y, @z);
     -o-transform: 		 translate3d(@x, @y, @z);
+}
+
+.scale (@factor) {
+    -webkit-transform: scale(@factor);
+    -moz-transform:    scale(@factor);
+    -ms-transform: 	   scale(@factor);
+    -o-transform: 	   scale(@factor);
 }
