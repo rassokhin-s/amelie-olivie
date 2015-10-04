@@ -331,12 +331,15 @@ table {
   border-spacing: 0;
 }
 .clearfix,
+.form__row,
 .pictures-container__top,
 .pictures-container__thumbs {
   *zoom: 1;
 }
 .clearfix:before,
 .clearfix:after,
+.form__row:before,
+.form__row:after,
 .pictures-container__top:before,
 .pictures-container__top:after,
 .pictures-container__thumbs:before,
@@ -345,6 +348,7 @@ table {
   display: table;
 }
 .clearfix:after,
+.form__row:after,
 .pictures-container__top:after,
 .pictures-container__thumbs:after {
   clear: both;
@@ -384,6 +388,9 @@ body {
 img {
   -ms-interpolation-mode: bicubic;
 }
+a {
+  text-decoration: none;
+}
 .content-wrapper {
   width: 90%;
   max-width: 1180px;
@@ -395,21 +402,84 @@ img {
     font-size: 42.5%;
   }
 }
+.header {
+  padding: 10px 0;
+}
+.header__logo {
+  font-size: 56px;
+  font-size: 5.6rem;
+  font: 56px 'zapfino';
+  font: 5.6rem 'zapfino';
+  color: #777;
+  line-height: 1;
+}
+.form__row {
+  position: relative;
+}
+.form__cell {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+.form__cell_30 {
+  width: 28%;
+}
+.form__cell_70 {
+  width: 68%;
+}
+.form__input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font: 18px 'PT Serif', serif;
+  font: 1.8rem 'PT Serif', serif;
+  padding: 3px 2%;
+}
+.form__input::-webkit-input-placeholder {
+  color: #cfcfcf;
+}
+.form__input:-moz-placeholder {
+  color: #cfcfcf;
+}
+.form__input::-moz-placeholder {
+  color: #cfcfcf;
+}
+.form__input:-ms-input-placeholder {
+  color: #cfcfcf;
+}
+.form__btn {
+  width: 100%;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font: 18px 'PT Serif', serif;
+  font: 1.8rem 'PT Serif', serif;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #9c9c9c;
+  padding: 3px 1%;
+}
+.pictures-container__top {
+  margin-bottom: 3.6rem;
+}
 .pictures-container__top-left,
 .pictures-container__top-right {
   float: left;
 }
 .pictures-container__top-left {
-  width: 65%;
+  width: 62%;
 }
 .pictures-container__top-right {
-  width: 35%;
+  width: 38%;
+  padding: 0 2%;
 }
-.pictures-container__weekpic-title {
+.pictures-container__title {
   font-size: 18px;
   font-size: 1.8rem;
   font: 18px 'PT Serif', serif;
   font: 1.8rem 'PT Serif', serif;
+  margin-bottom: 2rem;
 }
 .image-post {
   display: block;
@@ -426,6 +496,16 @@ img {
   overflow: hidden;
   margin: 15px auto;
   background: #f0f0ed;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.image-post__img-wrapper:hover {
+  -webkit-box-shadow: 0px 0px 50px 0px #9c9c9c;
+  -moz-box-shadow: 0px 0px 50px 0px #9c9c9c;
+  box-shadow: 0px 0px 50px 0px #9c9c9c;
 }
 .image-post__img-wrapper:hover .image-post__img {
   transform: translate(-50%, -50%) scale(1.2);
@@ -457,8 +537,6 @@ img {
   height: 0;
   padding-bottom: 60%;
   position: relative;
-  overflow: hidden;
-  border: 1px solid dimgray;
 }
 .weekpic__img {
   display: block;
@@ -471,4 +549,55 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 50px 0px #9c9c9c;
+  -moz-box-shadow: 0px 0px 50px 0px #9c9c9c;
+  box-shadow: 0px 0px 50px 0px #9c9c9c;
+}
+.form-signup .form__row {
+  position: relative;
+}
+.form-signup .form__input {
+  border: 1px solid #9c9c9c;
+  width: 100%;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font: 16px 'PT Serif', serif;
+  font: 1.6rem 'PT Serif', serif;
+  padding: 7px 22% 7px 3%;
+  position: relative;
+  z-index: 1;
+  color: #1a1a1a;
+  border-radius: 5px;
+}
+.form-signup .form__input::-webkit-input-placeholder {
+  color: #9c9c9c;
+}
+.form-signup .form__input:-moz-placeholder {
+  color: #9c9c9c;
+}
+.form-signup .form__input::-moz-placeholder {
+  color: #9c9c9c;
+}
+.form-signup .form__input:-ms-input-placeholder {
+  color: #9c9c9c;
+}
+.form-signup .form__btn {
+  display: inline-block;
+  width: auto;
+  position: absolute;
+  z-index: 2;
+  top: 4px;
+  right: 4px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font: 16px 'PT Serif', serif;
+  font: 1.6rem 'PT Serif', serif;
+  background: #fff;
+  border: 1px solid #9c9c9c;
+  color: #9c9c9c;
+  padding: 3px 2%;
+  border-radius: 5px;
+}
+.form-signup .form__btn:hover {
+  color: #1a1a1a;
 }

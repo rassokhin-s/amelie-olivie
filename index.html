@@ -9,18 +9,42 @@
     <link rel="stylesheet" property="stylesheet" href="public/css/all.css">
   </head>
   <body class="blog">
-    <div class="content-wrapper">
-      <section class="pictures-container">
+    <header class="header">
+      <div class="content-wrapper"><a href="/" class="header__logo">Amélie Olivier</a></div>
+    </header>
+    <section class="pictures-container">
+      <div class="content-wrapper">
         <div class="pictures-container__top">
           <div class="pictures-container__top-left">
-            <p class="pictures-container__weekpic-title">The Painting of the Week</p>
+            <p class="pictures-container__title">The Painting of the Week</p>
             <div id="weekpicContainer" class="weekpic-container"></div>
           </div>
-          <div class="pictures-container__top-right"></div>
+          <div class="pictures-container__top-right">
+            <form id="formSignup" method="POST" action="" class="form form-signup">
+              <div class="form__row form__row_notice">
+                <p class="form__notice">Sign Up to receive the painting of the week</p>
+              </div>
+              <div class="form__row">
+                <input type="email" placeholder="E-mail" class="form__input">
+                <button type="submit" class="form__btn">Sign Up</button>
+              </div>
+            </form>
+            <!--form.form#formSignup(method="POST", action="")-->
+            <!--	.form__row.form__row_notice-->
+            <!--		p.form__notice Sign Up to receive the painting of the week-->
+            <!--	.form__row-->
+            <!--		.form__cell.form__cell_70-->
+            <!--			input.form__input(type="email", placeholder="E-mail")-->
+            <!--		.form__cell.form__cell_30-->
+            <!--			button.form__btn(type="submit") Sign Up-->
+          </div>
         </div>
-        <div id="photosContainer" class="pictures-container__thumbs"></div>
-      </section>
-    </div>
+        <div class="pictures-container__thumbs">
+          <p class="pictures-container__title">Other Paintings</p>
+          <div id="photosContainer"></div>
+        </div>
+      </div>
+    </section>
     <script id="picOfTheWeekTmpl" type="text/x-jsrender">
       <div class="weekpic">
         <div class="weekpic__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="weekpic__img"></div>

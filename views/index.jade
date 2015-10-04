@@ -4,14 +4,20 @@ html
 		include include/_meta_common
 		link(rel='stylesheet', property='stylesheet', href="public/css/all.css")
 	body.blog
-		.content-wrapper
-			section.pictures-container
+		header.header
+			.content-wrapper
+				a.header__logo(href="/") Amélie Olivier
+		section.pictures-container
+			.content-wrapper
 				.pictures-container__top
 					.pictures-container__top-left
-						p.pictures-container__weekpic-title The Painting of the Week
+						p.pictures-container__title The Painting of the Week
 						.weekpic-container#weekpicContainer
 					.pictures-container__top-right
-				.pictures-container__thumbs#photosContainer
+						include include/form-signup
+				.pictures-container__thumbs
+					p.pictures-container__title Other Paintings
+					#photosContainer
 		include include/weekpic-template
 		include include/pic-template
 		include include/_skin_common

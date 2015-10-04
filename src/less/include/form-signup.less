@@ -1,0 +1,37 @@
+.form-signup {
+    .form{
+        &__row {
+            position: relative;
+        }
+        &__input {
+            border: 1px solid #9c9c9c;
+            width: 100%;
+            .ptserif(1.6);
+            .placeholder({
+                color: #9c9c9c;
+            });
+            padding: 7px 22% 7px 3%;
+            position: relative;
+            z-index: 1;
+            color: lighten(#000, 10%);
+            border-radius: 5px;
+        }
+        &__btn {
+            display: inline-block;
+            width: auto;
+            position: absolute;
+            z-index: 2;
+            top: 4px;
+            right: 4px;
+            .ptserif(1.6);
+            background: #fff;
+            border: 1px solid #9c9c9c;
+            color: #9c9c9c;
+            padding: 3px 2%;
+            border-radius: 5px;
+            &:hover {
+                color: lighten(#000, 10%);
+            }
+        }
+    }
+}

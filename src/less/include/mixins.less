@@ -72,3 +72,18 @@
     -ms-transform: 	   scale(@factor);
     -o-transform: 	   scale(@factor);
 }
+
+.placeholder(@rules) {
+    &::-webkit-input-placeholder {
+        @rules();
+    }
+    &:-moz-placeholder {
+        @rules();
+    }
+    &::-moz-placeholder {
+        @rules();
+    }
+    &:-ms-input-placeholder {
+        @rules();
+    }
+}
