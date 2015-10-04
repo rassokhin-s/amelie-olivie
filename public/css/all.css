@@ -402,17 +402,17 @@ table {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.daypic {
+.weekpic {
   display: block;
 }
-.daypic__img-wrapper {
+.weekpic__img-wrapper {
   width: 100%;
   height: 0;
   padding-bottom: 60%;
   position: relative;
   overflow: hidden;
 }
-.daypic__img {
+.weekpic__img {
   display: block;
   position: absolute;
   top: 50%;
