@@ -20,23 +20,15 @@
             <div id="weekpicContainer" class="weekpic-container"></div>
           </div>
           <div class="pictures-container__top-right">
-            <form id="formSignup" method="POST" action="" class="form form-signup">
+            <form id="formSignup" method="post" target="_blank" data-parsley-validate action="https://amelie-olivier.us11.list-manage.com/subscribe/post?u=048bd0f03c835fd0b6c59ccd2&amp;amp;id=c1af435906" class="form form-signup">
               <div class="form__row form__row_notice">
                 <p class="form__notice">Sign Up to receive the painting of the week</p>
               </div>
               <div class="form__row">
-                <input type="email" placeholder="E-mail" class="form__input">
+                <input type="email" name="EMAIL" data-parsley-trigger="change" placeholder="E-mail" required class="form__input">
                 <button type="submit" class="form__btn">Sign Up</button>
               </div>
             </form>
-            <!--form.form#formSignup(method="POST", action="")-->
-            <!--	.form__row.form__row_notice-->
-            <!--		p.form__notice Sign Up to receive the painting of the week-->
-            <!--	.form__row-->
-            <!--		.form__cell.form__cell_70-->
-            <!--			input.form__input(type="email", placeholder="E-mail")-->
-            <!--		.form__cell.form__cell_30-->
-            <!--			button.form__btn(type="submit") Sign Up-->
           </div>
         </div>
         <div class="pictures-container__thumbs">
@@ -67,6 +59,7 @@
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="public/js/vendor/jsrender.min.js"></script>
     <script type="text/javascript" src="public/js/vendor/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="public/js/vendor/parsley.min.js"></script>
     <script type="text/javascript" src="public/js/home.js"></script>
   </body>
 </html>

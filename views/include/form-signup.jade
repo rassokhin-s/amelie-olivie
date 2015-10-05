@@ -1,15 +1,8 @@
-form.form.form-signup#formSignup(method="POST", action="")
+form.form.form-signup#formSignup(
+	method="post", target="_blank", data-parsley-validate,
+	action="https://amelie-olivier.us11.list-manage.com/subscribe/post?u=048bd0f03c835fd0b6c59ccd2&amp;id=c1af435906")
 	.form__row.form__row_notice
 		p.form__notice Sign Up to receive the painting of the week
 	.form__row
-		input.form__input(type="email", placeholder="E-mail")
+		input.form__input(type="email", name="EMAIL", data-parsley-trigger="change", placeholder="E-mail", required)
 		button.form__btn(type="submit") Sign Up
-
-//form.form#formSignup(method="POST", action="")
-//	.form__row.form__row_notice
-//		p.form__notice Sign Up to receive the painting of the week
-//	.form__row
-//		.form__cell.form__cell_70
-//			input.form__input(type="email", placeholder="E-mail")
-//		.form__cell.form__cell_30
-//			button.form__btn(type="submit") Sign Up
