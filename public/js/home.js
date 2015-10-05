@@ -14,7 +14,12 @@ $(function() {
             // then we set this callback to local func to work with local env
             thumblrCallback = this.thumblrCallback.bind(this);
             this.sendRequest();
-            this.initForm()
+            this.bindEvents();
+        },
+        bindEvents: function() {
+            $('#bioLink').fancybox({
+                maxWidth: 800
+            });
         },
         sendRequest: function() {
             $.ajax({
@@ -104,9 +109,6 @@ $(function() {
                     }
                 });
             });
-        },
-        initForm: function() {
-
         },
         stripGarbage: function(str) {
             var caption = $(str).text();

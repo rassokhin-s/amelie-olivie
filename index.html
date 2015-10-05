@@ -29,6 +29,11 @@
                 <button type="submit" class="form__btn">Sign Up</button>
               </div>
             </form>
+            <ul class="pictures-container__links-list">
+              <li class="pictures-container__link-item"><a href="http://amelie-fineart.tumblr.com/" target="_blank" class="sidebar-link">Instruction / Blog</a></li>
+              <li class="pictures-container__link-item"><a href="https://www.facebook.com/ameliefineart?ref=hl" target="_blank" class="sidebar-link">Facebook</a></li>
+              <li class="pictures-container__link-item"><a id="bioLink" href="#bioModal" class="sidebar-link">Bio</a></li>
+            </ul>
           </div>
         </div>
         <div class="pictures-container__thumbs">
@@ -37,6 +42,19 @@
         </div>
       </div>
     </section>
+    <div id="bioModal" class="bio"><img src="public/images/bio-pic.jpg" class="bio__img">
+      <div class="bio__text">
+        Amélie Olivier est née en Basse Normandie et habite à Aix en Provence.
+        Sa Formation est essentiellement effectuée au sein d’ateliers privés aux Etats Unis, en France et en Norvège.
+        - Atelier Sadie Valeri à San Francisco, Californie
+        - Atelier BACAA à San Carlos, Californie
+        - Studio Escalier (méthode de Ted Seth Jacobs)
+        - Atelier de Gundula  Jacobs
+        - Odd Nerdrum School, Norvège
+        Différentes techniques académiques ont été abordées : les techniques Flamande, Vénitienne, Alla Prima, Sight-size.
+        Pour toutes questions ou juste pour discuter autour du sujet de la peinture, un email : <a href="mailto:atelieramelieolivier@gmail.com">atelieramelieolivier@gmail.com</a>
+      </div>
+    </div>
     <script id="picOfTheWeekTmpl" type="text/x-jsrender">
       <div id="{{:imgId}}" class="weekpic"><a title="{{:title}}" href="{{:imgSrc}}" target="_blank" class="weekpic__img-wrapper js-show-popup"><img src="{{:imgSrc}}" alt="{{:title}}" class="weekpic__img"></a>
         <div class="image-post-content js-image-content">

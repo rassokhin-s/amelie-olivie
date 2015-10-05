@@ -15,9 +15,17 @@ html
 						.weekpic-container#weekpicContainer
 					.pictures-container__top-right
 						include include/form-signup
+						ul.pictures-container__links-list
+							li.pictures-container__link-item
+								a.sidebar-link(href="http://amelie-fineart.tumblr.com/", target="_blank") Instruction / Blog
+							li.pictures-container__link-item
+								a.sidebar-link(href="https://www.facebook.com/ameliefineart?ref=hl", target="_blank") Facebook
+							li.pictures-container__link-item
+								a.sidebar-link#bioLink(href="#bioModal") Bio
 				.pictures-container__thumbs
 					p.pictures-container__title Other Paintings
 					#photosContainer
+		include include/bio-modal
 		include include/weekpic-template
 		include include/pic-template
 		include include/_skin_common
