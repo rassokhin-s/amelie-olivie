@@ -1,4 +1,8 @@
 script#picOfTheWeekTmpl(type="text/x-jsrender")
-	.weekpic
-		.weekpic__img-wrapper
-			img.weekpic__img(src="{{:imgSrc}}" alt="{{:imgName}}")
+	.weekpic(id="{{:imgId}}")
+		a.weekpic__img-wrapper.js-show-popup(title="{{:title}}", href="{{:imgSrc}}", target="_blank")
+			img.weekpic__img(src="{{:imgSrc}}" alt="{{:title}}")
+		.image-post-content.js-image-content
+			p.image-post-content__row {{:title}}
+			p.image-post-content__row Size: {{:size}}
+			p.image-post-content__row Price: {{:price}}

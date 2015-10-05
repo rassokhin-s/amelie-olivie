@@ -38,11 +38,14 @@ $(function() {
                     this.createImage(post, type);
                 }
             }
+            this.initFancyBoxes();
         },
         createImage: function(post, type) {
             for (var i = 0; i < post.photos.length; i++) {
                 var photos = post.photos[i];
-                var $html = this.renderImage(type, photos, post.caption);
+                var caption = this.stripGarbage(post.caption);
+                var captionObj = this.getJSONFromStr(caption);
+                var $html = this.renderImage(type, photos, captionObj);
                 if (type == 'weekpic') {
                     this.$weekpicContainer.html($html);
                 }
@@ -51,24 +54,70 @@ $(function() {
                 }
             }
         },
-        renderImage: function(type, photos, caption) {
+        renderImage: function(type, photos, captionObj) {
+            var data = {
+                title       : captionObj.title || 'none',
+                size        : captionObj.size  || 'none',
+                price       : captionObj.price || 'none',
+                date        : captionObj.date  || 'none',
+                description : captionObj.description || 'none',
+                sold        : captionObj.sold || 'none'
+            };
             if (type == 'weekpic') {
-                return this.weekPicTmlp.render({
-                    // get alt_size of 400px width
-                    imgSrc: photos.original_size.url,
-                    // escape html in caption
-                    imgName: $(caption).text()
-                });
+                return this.weekPicTmlp.render($.extend(data, {
+                    // get original size
+                    imgSrc: photos.original_size.url
+                }));
             }
             else if (type == 'simple') {
-                return this.simpleTmpl.render({
+                return this.simpleTmpl.render($.extend(data,{
                     // get alt_size of 400px width
                     imgSrc: photos.alt_sizes[2].url,
-                    // escape html in caption
-                    imgName: $(caption).text()
-                });
+                    imgSrcOrig: photos.original_size.url
+                }));
             }
             return '';
+        },
+        initFancyBoxes: function() {
+            this.$photosContainer.find('.js-show-popup').each(function() {
+                var $this = $(this);
+                $this.fancybox({
+                    helpers		: {
+                        title	: { type : 'inside' },
+                        buttons	: {}
+                    },
+                    beforeLoad: function() {
+                        this.title = $this.next('.js-image-content').html()
+                    }
+                });
+            });
+            this.$weekpicContainer.find('.js-show-popup').each(function() {
+                var $this = $(this);
+                $this.fancybox({
+                    helpers		: {
+                        title	: { type : 'inside' },
+                        buttons	: {}
+                    },
+                    beforeLoad: function() {
+                        this.title = $this.next('.js-image-content').html()
+                    }
+                });
+            });
+        },
+        stripGarbage: function(str) {
+            var caption = $(str).text();
+            // get rid of non-english quotes and make all quotes double quotes
+            return caption.replace(/\“/g, "\"").replace(/\”/g, "\"").replace(/\'/g, "\"");
+        },
+        getJSONFromStr: function(str) {
+            var obj = {};
+            try {
+                obj = JSON.parse(str);
+            }
+            catch (err) {
+                console.log('Error parsing string', str, err);
+            }
+            return obj;
         }
     };
 

@@ -46,16 +46,27 @@
       </div>
     </section>
     <script id="picOfTheWeekTmpl" type="text/x-jsrender">
-      <div class="weekpic">
-        <div class="weekpic__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="weekpic__img"></div>
+      <div id="{{:imgId}}" class="weekpic"><a title="{{:title}}" href="{{:imgSrc}}" target="_blank" class="weekpic__img-wrapper js-show-popup"><img src="{{:imgSrc}}" alt="{{:title}}" class="weekpic__img"></a>
+        <div class="image-post-content js-image-content">
+          <p class="image-post-content__row">{{:title}}</p>
+          <p class="image-post-content__row">Size: {{:size}}</p>
+          <p class="image-post-content__row">Price: {{:price}}</p>
+        </div>
       </div>
     </script>
     <script id="picTmpl" type="text/x-jsrender">
-      <div class="image-post"><a href="javascript:void(0);" class="image-post__img-wrapper"><img src="{{:imgSrc}}" alt="{{:imgName}}" class="image-post__img"></a></div>
+      <div class="image-post"><a title="{{:title}}" href="{{:imgSrcOrig}}" target="_blank" class="image-post__img-wrapper js-show-popup"><img src="{{:imgSrc}}" alt="{{:title}}" class="image-post__img"></a>
+        <div class="image-post-content js-image-content">
+          <p class="image-post-content__row">{{:title}}</p>
+          <p class="image-post-content__row">Size: {{:size}}</p>
+          <p class="image-post-content__row">Price: {{:price}}</p>
+        </div>
+      </div>
     </script>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="public/js/vendor/jsrender.min.js"></script>
+    <script type="text/javascript" src="public/js/vendor/jquery.fancybox.js"></script>
     <script type="text/javascript" src="public/js/home.js"></script>
   </body>
 </html>
