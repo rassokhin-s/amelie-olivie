@@ -11,13 +11,24 @@
     }
     &__img {
         display: block;
+        max-width: 100%;
+        max-height: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
-        max-width: 100%;
-        max-height: 100%;
+        margin: 0 auto;
         .translate(-50%, -50%);
         .box-shadow(0px 0px 50px 0px rgba(156,156,156,1));
+    }
+    &__info {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.6);
+        text-align: left;
+        border-radius: 15px;
+        .translate(0, -50%);
     }
     .image-post-content {
         display: none;
@@ -28,6 +39,12 @@
     .weekpic {
         &__img-wrapper {
             padding-bottom: 100%;
+        }
+        &__info {
+            top: auto;
+            left: 50%;
+            bottom: 1rem;
+            .translate(-50%, 0);
         }
     }
 }
