@@ -648,11 +648,16 @@ textarea.parsley-error {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+html,
+body {
+  min-height: 100%;
+}
 html {
   font-size: 62.5%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   /* Prevent font scaling in landscape while allowing user zoom */
+  height: 100%;
 }
 body {
   font-family: 'PT Serif', serif;
@@ -660,6 +665,8 @@ body {
   font-size: 1.4rem;
   -webkit-font-smoothing: antialiased;
   background: url(../../public/images/linen.jpg) repeat;
+  padding-bottom: 204px;
+  position: relative;
 }
 img {
   -ms-interpolation-mode: bicubic;
@@ -672,6 +679,11 @@ a {
   max-width: 1180px;
   margin: 0 auto;
   position: relative;
+}
+@media only screen and (max-width: 767px) {
+  body {
+    padding-bottom: 311px;
+  }
 }
 .header {
   padding: 10px 0;
@@ -688,8 +700,10 @@ a {
   padding: 2rem 0;
   text-align: center;
   background: rgba(102, 102, 102, 0.8);
-  position: relative;
-  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 .footer:before {
   display: block;

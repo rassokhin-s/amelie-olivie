@@ -10,10 +10,16 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 html{
     font-size: 62.5%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+    height: 100%;
 }
 
 body {
@@ -22,6 +28,8 @@ body {
     font-size: 1.4rem;
     -webkit-font-smoothing: antialiased;
     background: url(../../public/images/linen.jpg) repeat;
+    padding-bottom: 204px;
+    position: relative;
 }
 
 img {
@@ -39,8 +47,11 @@ a {
     position: relative;
 }
 
-//@media @mobile {
+@media @mobile {
+    body {
+        padding-bottom: 311px;
+    }
 //    html {
 //        font-size: 42.5%;
 //    }
-//}
+}
