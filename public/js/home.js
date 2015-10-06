@@ -17,7 +17,7 @@ $(function() {
             this.bindEvents();
         },
         bindEvents: function() {
-            $('#bioLink').fancybox({
+            $('#bioLink, #bioLinkFooter').fancybox({
                 maxWidth: 800
             });
         },
