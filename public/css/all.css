@@ -828,7 +828,7 @@ a {
   padding: 3px 1%;
 }
 .pictures-container__top {
-  margin-bottom: 3.6rem;
+  margin-bottom: 5rem;
 }
 .pictures-container__top-left,
 .pictures-container__top-right {
@@ -847,6 +847,9 @@ a {
   font: 18px 'PT Serif', serif;
   font: 1.8rem 'PT Serif', serif;
   margin-bottom: 2rem;
+}
+.pictures-container__title_weekpic {
+  margin-bottom: 5rem;
 }
 .pictures-container__thumbs .image-post {
   float: left;
@@ -1005,13 +1008,25 @@ a {
   top: 50%;
   left: 50%;
   margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0px 0px 50px 0px #9c9c9c;
-  -moz-box-shadow: 0px 0px 50px 0px #9c9c9c;
-  box-shadow: 0px 0px 50px 0px #9c9c9c;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(8deg) rotateY(25deg) rotateZ(-4deg);
+  -ms-transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(8deg) rotateY(25deg) rotateZ(-4deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(8deg) rotateY(25deg) rotateZ(-4deg);
+  -webkit-box-shadow: -10px -7px 30px 10px #9c9c9c;
+  -moz-box-shadow: -10px -7px 30px 10px #9c9c9c;
+  box-shadow: -10px -7px 30px 10px #9c9c9c;
+}
+.weekpic__img:hover {
+  transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  -ms-transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  -webkit-box-shadow: 0px 0px 50px 5px #9c9c9c;
+  -moz-box-shadow: 0px 0px 50px 5px #9c9c9c;
+  box-shadow: 0px 0px 50px 5px #9c9c9c;
 }
 .weekpic__info {
   position: absolute;
