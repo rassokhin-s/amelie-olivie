@@ -951,6 +951,7 @@ a {
   height: 0;
   padding-bottom: 100%;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   margin: 15px auto;
   background: #f0f0ed;
@@ -971,6 +972,7 @@ a {
 .image-post__img {
   display: block;
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 50%;
   min-width: 100%;
