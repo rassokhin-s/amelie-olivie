@@ -998,6 +998,7 @@ a {
   height: 0;
   padding-bottom: 60%;
   position: relative;
+  z-index: 1;
 }
 .weekpic__link {
   display: inline-block;
@@ -1007,6 +1008,7 @@ a {
   max-width: 100%;
   max-height: 100%;
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 50%;
   margin: 0 auto;
@@ -1021,6 +1023,7 @@ a {
   -webkit-box-shadow: -10px -7px 30px 10px #9c9c9c;
   -moz-box-shadow: -10px -7px 30px 10px #9c9c9c;
   box-shadow: -10px -7px 30px 10px #9c9c9c;
+  border: 5px ridge #fff;
 }
 .weekpic__img:hover {
   transform: translate3d(-50%, -50%, 0) perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
