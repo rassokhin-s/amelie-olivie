@@ -1,12 +1,12 @@
 .form {
     &__row {
         &:extend(.clearfix all);
-        position: relative;
     }
     &__cell {
         float: left;
         width: 48%;
         margin-right: 2%;
+        &:extend(.clearfix all);
         &_30 {
             width: 28%;
         }
@@ -23,6 +23,17 @@
             color: #cfcfcf;
         });
         padding: 3px 2%;
+    }
+    &__row,
+    &__cell {
+        position: relative;
+        .parsley-errors-list {
+            position: absolute;
+            left: 50%;
+            top: ~"calc(100% + 8px)";
+            .translate(-50%, -50%);
+            margin-right: -50%;
+        }
     }
     &__btn {
         width: 100%;

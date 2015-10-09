@@ -333,6 +333,7 @@ table {
 .clearfix,
 .footer .content-wrapper,
 .form__row,
+.form__cell,
 .pictures-container__top,
 .pictures-container__thumbs,
 .bio {
@@ -344,6 +345,8 @@ table {
 .footer .content-wrapper:after,
 .form__row:before,
 .form__row:after,
+.form__cell:before,
+.form__cell:after,
 .pictures-container__top:before,
 .pictures-container__top:after,
 .pictures-container__thumbs:before,
@@ -356,6 +359,7 @@ table {
 .clearfix:after,
 .footer .content-wrapper:after,
 .form__row:after,
+.form__cell:after,
 .pictures-container__top:after,
 .pictures-container__thumbs:after,
 .bio:after {
@@ -782,9 +786,6 @@ a {
     margin: 0 auto 4rem;
   }
 }
-.form__row {
-  position: relative;
-}
 .form__cell {
   float: left;
   width: 48%;
@@ -817,6 +818,21 @@ a {
 }
 .form__input:-ms-input-placeholder {
   color: #cfcfcf;
+}
+.form__row,
+.form__cell {
+  position: relative;
+}
+.form__row .parsley-errors-list,
+.form__cell .parsley-errors-list {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 8px);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  margin-right: -50%;
 }
 .form__btn {
   width: 100%;
