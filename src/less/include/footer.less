@@ -44,8 +44,10 @@
         display: inline-block;
         color: #fff;
         text-decoration: none;
-        &:hover {
-            text-decoration: underline;
+        @media @desktop {
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
     .form {
