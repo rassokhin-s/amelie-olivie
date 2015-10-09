@@ -2,7 +2,4 @@ script#picTmpl(type="text/x-jsrender")
 	.image-post
 		a.image-post__img-wrapper.js-show-popup(title="{{:title}}", href="{{:imgSrcOrig}}", target="_blank")
 			img.image-post__img(src="{{:imgSrc}}" alt="{{:title}}")
-		.image-post-content.js-image-content
-			p.image-post-content__row {{:title}}
-			p.image-post-content__row Size: {{:size}}
-			p.image-post-content__row Price: {{:price}}
+		include image-modal
