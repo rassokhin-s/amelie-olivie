@@ -1,8 +1,29 @@
 .header {
     padding: 10px 0;
+    position: relative;
+    @media @mobile {
+        padding-top: 30px;
+    }
     &__logo {
         .zapfino(5.6);
         color: #777;
         line-height: 1;
+        position: relative;
+        z-index: 2;
+    }
+    &__finalist-img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        @media @tablet {
+            width: 150px;
+            height: auto;
+        }
+        @media @mobile {
+            width: 150px;
+            height: auto;
+            opacity: 0.4;
+            z-index: 0;
+        }
     }
 }
