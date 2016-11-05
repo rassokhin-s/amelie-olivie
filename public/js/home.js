@@ -85,6 +85,7 @@ $(function() {
             return '';
         },
         initFancyBoxes: function() {
+            var _this = this;
             this.$photosContainer.find('.js-show-popup').each(function() {
                 var $this = $(this);
                 $this.fancybox({
@@ -94,6 +95,10 @@ $(function() {
                     },
                     beforeLoad: function() {
                         this.title = $this.next('.js-image-content').html()
+                    },
+                    afterShow: function() {
+                        var paintingTitle = $this.attr('title');
+                        _this.sendGAPaintingClickEvent(paintingTitle);
                     }
                 });
             });
@@ -105,10 +110,20 @@ $(function() {
                         buttons	: {}
                     },
                     beforeLoad: function() {
-                        this.title = $this.next('.js-image-content').html()
+                        this.title = $this.next('.js-image-content').html();
+                    },
+                    afterShow: function() {
+                        var paintingTitle = $this.attr('title');
+                        _this.sendGAPaintingClickEvent(paintingTitle);
                     }
                 });
             });
+        },
+        sendGAPaintingClickEvent: function(title) {
+            if (ga) {
+                console.log('ssss', title);
+                ga('send', 'event', 'Paintings', 'show', title);
+            }
         },
         stripGarbage: function(str) {
             var caption = $(str).text();
